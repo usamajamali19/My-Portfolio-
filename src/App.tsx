@@ -45,7 +45,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#0B1120] text-slate-300 font-sans select-none selection:bg-cyan-500/30 overflow-hidden">
+    <div className="relative min-h-screen bg-[#0B1120] text-slate-300 font-sans selection:bg-cyan-500/30 overflow-hidden">
       
       {/* 1. Global Loading Screen */}
       <AnimatePresence>

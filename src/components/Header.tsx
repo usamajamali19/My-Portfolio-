@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data';
@@ -23,6 +23,31 @@ export default function Header() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleScrollTo = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    
+    const targetId = href.replace('#', '');
+    if (targetId === '') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    
+    const element = document.getElementById(targetId);
+    if (element) {
+      const offset = 80; // offset for the fixed header
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = element.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const navItems = [
     { name: 'About', href: '#about' },
@@ -50,6 +75,7 @@ export default function Header() {
         {/* Logo */}
         <a 
           href="#" 
+          onClick={(e) => handleScrollTo(e, '#')}
           className="group flex items-center gap-1.5 text-xl font-bold tracking-tight text-white uppercase"
         >
           <span className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-600 to-cyan-500 flex items-center justify-center text-xs font-black text-white shadow-lg shadow-blue-500/20 group-hover:scale-105 transition-transform duration-300">
@@ -66,6 +92,7 @@ export default function Header() {
             <a 
               key={item.name} 
               href={item.href} 
+              onClick={(e) => handleScrollTo(e, item.href)}
               className="text-slate-400 hover:text-white transition-colors duration-200 relative py-2 group"
             >
               {item.name}
@@ -78,6 +105,7 @@ export default function Header() {
         <div className="flex items-center gap-4">
           <a 
             href="#contact" 
+            onClick={(e) => handleScrollTo(e, '#contact')}
             className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white px-5 py-2.5 rounded-xl text-xs font-semibold tracking-wider uppercase transition-all duration-300 shadow-lg shadow-blue-500/10 hover:shadow-cyan-500/20 hover:-translate-y-0.5"
           >
             Hire Me <ArrowRight size={14} />
@@ -108,7 +136,7 @@ export default function Header() {
                 <motion.a 
                   key={item.name} 
                   href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => handleScrollTo(e, item.href)}
                   initial={{ opacity: 0, x: -15 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: idx * 0.05 }}
@@ -119,7 +147,7 @@ export default function Header() {
               ))}
               <a 
                 href="#contact"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={(e) => handleScrollTo(e, '#contact')}
                 className="w-full text-center mt-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white py-3 rounded-xl font-bold uppercase text-xs tracking-wider transition-all shadow-md shadow-blue-500/10"
               >
                 Hire Me
