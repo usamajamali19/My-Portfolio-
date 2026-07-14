@@ -113,6 +113,28 @@ export const PORTFOLIO_DATA = {
       liveUrl: "https://yys3r4.csb.app/",
       githubUrl: "https://github.com/usamajamali19",
       featured: true
+    },
+    {
+      id: "proj-3",
+      title: "Apex Corporate Website",
+      description: "A premium responsive corporate platform customized with Elementor Pro for local & global businesses.",
+      longDescription: "A modern, SEO-optimized business portal utilizing customized WordPress templates and custom elements. Features flawless loading speeds, interactive contact grids, and full cross-device responsiveness.",
+      category: "WordPress",
+      technologies: ["WordPress", "Elementor Pro", "Responsive Web Design", "SEO Basics"],
+      liveUrl: "https://websitedemos.net/business-consulting-02/",
+      githubUrl: "https://github.com/usamajamali19",
+      featured: true
+    },
+    {
+      id: "proj-4",
+      title: "Velocity Sports Store",
+      description: "A feature-rich e-commerce store built on WooCommerce and customized to maximize digital checkout conversions.",
+      longDescription: "An advanced responsive online shopping platform with variable sport apparel listings, real-time cart flows, customizable product categories, and secure configurations.",
+      category: "WordPress",
+      technologies: ["WordPress", "WooCommerce", "Elementor", "Plugin Installation"],
+      liveUrl: "https://websitedemos.net/custom-printing-02/",
+      githubUrl: "https://github.com/usamajamali19",
+      featured: true
     }
   ] as Project[]
 };

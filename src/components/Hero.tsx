@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
 import { Github, Linkedin, Mail, ArrowDown, ExternalLink, FileText, ChevronRight } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data';
+import ResumeModal from './ResumeModal';
 
 export default function Hero() {
+  const [isResumeOpen, setIsResumeOpen] = useState(false);
   const { name, title, shortDescription, email, linkedin, github, avatar } = PORTFOLIO_DATA.personal;
   const words = PORTFOLIO_DATA.typingWords;
 
@@ -157,12 +159,12 @@ export default function Hero() {
             >
               View Projects <ChevronRight size={16} />
             </a>
-            <a
-              href={PORTFOLIO_DATA.personal.resumeUrl}
-              className="px-8 py-4 w-full sm:w-auto text-center rounded-xl font-bold text-sm tracking-wider uppercase text-slate-400 hover:text-white border border-dashed border-slate-800 hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2"
+            <button
+              onClick={() => setIsResumeOpen(true)}
+              className="px-8 py-4 w-full sm:w-auto text-center rounded-xl font-bold text-sm tracking-wider uppercase text-slate-400 hover:text-white border border-dashed border-slate-800 hover:border-cyan-500/40 transition-all duration-300 hover:-translate-y-1 flex items-center justify-center gap-2 cursor-pointer"
             >
-              <FileText size={16} /> Download CV
-            </a>
+              <FileText size={16} /> My Resume
+            </button>
           </motion.div>
 
           {/* Social Icons Float Panel */}
@@ -223,7 +225,7 @@ export default function Hero() {
                 <span className="font-mono text-xl font-black">&lt;/&gt;</span>
               </div>
               <h3 className="text-white font-extrabold text-base md:text-lg tracking-tight">Usama Jamali</h3>
-              <p className="text-cyan-400 font-bold text-[10px] md:text-xs uppercase tracking-wider">Dev Specialist</p>
+              <p className="text-cyan-400 font-bold text-[10px] md:text-xs uppercase tracking-wider">Web Developer</p>
             </div>
 
             {/* Orbiting Tech Skill Nodes */}
@@ -275,18 +277,18 @@ export default function Hero() {
               <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest bg-slate-950/80 px-2 py-0.5 rounded-md border border-white/5">WooCommerce</span>
             </motion.div>
 
-            {/* Float badge widget */}
+             {/* Float badge widget */}
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
               className="absolute -bottom-4 bg-slate-950/90 border border-white/10 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md z-20"
             >
               <div className="w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-sm font-bold">
-                5+
+                1+
               </div>
               <div className="text-left">
                 <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 leading-none">Experience</p>
-                <p className="text-xs font-black text-white">Years of Dev Work</p>
+                <p className="text-xs font-black text-white">Year of Dev Work</p>
               </div>
             </motion.div>
           </motion.div>
@@ -303,6 +305,8 @@ export default function Hero() {
           <ArrowDown size={14} />
         </motion.div>
       </div>
+
+      <ResumeModal isOpen={isResumeOpen} onClose={() => setIsResumeOpen(false)} />
     </section>
   );
 }
