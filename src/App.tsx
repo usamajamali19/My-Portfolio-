@@ -45,7 +45,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#0B1120] text-slate-300 font-sans selection:bg-cyan-500/30 overflow-hidden">
+    <div className="relative min-h-screen bg-[#0F172A] text-slate-200 font-sans selection:bg-cyan-500/30 overflow-hidden">
       
       {/* 1. Global Loading Screen */}
       <AnimatePresence>
@@ -55,7 +55,7 @@ export default function App() {
             initial={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.6, ease: 'easeInOut' }}
-            className="fixed inset-0 bg-[#0B1120] z-[9999] flex flex-col items-center justify-center p-6"
+            className="fixed inset-0 bg-[#0F172A] z-[9999] flex flex-col items-center justify-center p-6"
           >
             {/* Ambient Background Blur */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[30rem] h-[30rem] bg-cyan-600/10 rounded-full blur-[140px] pointer-events-none" />

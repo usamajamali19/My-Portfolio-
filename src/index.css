@@ -71,7 +71,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B1120;
+  background: #0F172A;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -90,8 +90,8 @@ html {
 }
 
 body {
-  background-color: #0B1120;
-  color: #94A3B8;
+  background-color: #0F172A;
+  color: #E2E8F0;
   overflow-x: hidden;
 }
 

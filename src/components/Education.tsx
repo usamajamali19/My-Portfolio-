@@ -28,9 +28,9 @@ export default function Education() {
   };
 
   return (
-    <section id="education" className="py-24 relative overflow-hidden bg-slate-950/40">
+    <section id="education" className="py-24 relative overflow-hidden bg-[#0F172A]">
       {/* Visual Ambient Spot */}
-      <div className="absolute top-[30%] right-[-15%] w-[40rem] h-[40rem] bg-cyan-950/15 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-[30%] right-[-15%] w-[40rem] h-[40rem] bg-cyan-950/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-4xl relative z-10">
         {/* Section Heading */}
@@ -44,7 +44,7 @@ export default function Education() {
             Education History
           </motion.h2>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full" />
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p className="mt-4 text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed font-medium">
             Academic qualifications underpinning my technological and problem-solving capacities.
           </p>
         </div>
@@ -52,7 +52,7 @@ export default function Education() {
         {/* Timeline Layout */}
         <div className="relative pl-6 sm:pl-10">
           {/* Vertical stem line */}
-          <div className="absolute left-1 sm:left-4 top-2 bottom-2 w-0.5 bg-gradient-to-b from-blue-600 via-cyan-500 to-slate-900" />
+          <div className="absolute left-1 sm:left-4 top-2 bottom-2 w-0.5 bg-gradient-to-b from-blue-600 via-cyan-500 to-slate-800" />
 
           {/* Education list */}
           <motion.div
@@ -76,7 +76,7 @@ export default function Education() {
                 </div>
 
                 {/* Info Card Panel */}
-                <div className="bg-slate-900/40 backdrop-blur-xl border border-white/10 hover:border-cyan-500/30 rounded-3xl p-6 transition-all duration-300 relative group shadow-2xl">
+                <div className="bg-slate-900 border border-slate-800 hover:border-cyan-500/30 rounded-3xl p-6 transition-all duration-300 relative group shadow-2xl">
                   {/* Glowing background on hover */}
                   <div className="absolute inset-px bg-gradient-to-r from-blue-600/0 via-cyan-500/5 to-indigo-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
 
@@ -84,7 +84,7 @@ export default function Education() {
                     {/* Header info */}
                     {edu.period ? (
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
-                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 uppercase tracking-widest bg-white/5 px-3 py-1 rounded-full border border-white/5">
+                        <span className="inline-flex items-center gap-1.5 text-xs font-bold text-cyan-400 uppercase tracking-widest bg-slate-950 px-3 py-1.5 rounded-full border border-slate-800">
                           <Calendar size={12} />
                           {edu.period}
                         </span>
@@ -96,13 +96,13 @@ export default function Education() {
                     <h3 className="text-xl font-bold text-white mb-1.5 group-hover:text-cyan-400 transition-colors">
                       {edu.degree}
                     </h3>
-                    <h4 className="text-sm font-semibold text-slate-300 mb-2 flex items-center gap-1">
-                      <BookOpen size={14} className="text-slate-500" />
+                    <h4 className="text-sm font-semibold text-slate-200 mb-2 flex items-center gap-1">
+                      <BookOpen size={14} className="text-slate-400" />
                       <span>{edu.institution}</span>
                     </h4>
 
                     {edu.description && (
-                      <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mt-2">
+                      <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mt-2 font-medium">
                         {edu.description}
                       </p>
                     )}

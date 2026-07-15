@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
-import { Github, Linkedin, Mail, ArrowDown, ExternalLink, FileText, ChevronRight } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowDown, ExternalLink, FileText, ChevronRight, Globe, Code, Laptop, ShoppingCart, Star } from 'lucide-react';
 import { PORTFOLIO_DATA } from '../data';
 import ResumeModal from './ResumeModal';
 
@@ -59,7 +59,7 @@ export default function Hero() {
   }));
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 md:py-0 overflow-hidden bg-[#0B1120] px-6">
+    <section className="relative min-h-screen flex items-center pt-24 pb-16 md:py-0 overflow-hidden bg-[#0F172A] px-6">
       {/* Background grain texture */}
       <div className="bg-grain" />
 
@@ -203,92 +203,111 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Holographic Skill Constellation Core instead of profile image */}
+        {/* Handcrafted macOS Browser Mockup showcasing custom WordPress child themes */}
         <div className="md:col-span-5 flex justify-center order-1 md:order-2">
           <motion.div
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, type: 'spring' }}
-            className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 flex items-center justify-center"
+            className="relative w-full max-w-[420px]"
           >
-            {/* Double outer glowing rotating borders */}
-            <div className="absolute inset-2 rounded-full border-2 border-dashed border-cyan-500/30 animate-spin-slow pointer-events-none" />
-            <div className="absolute inset-8 rounded-full border-2 border-indigo-500/20 animate-spin-reverse-slow pointer-events-none" />
+            {/* Outer Accent Shadow border */}
+            <div className="absolute inset-[-1px] rounded-2xl bg-gradient-to-br from-cyan-500/30 to-blue-600/30 blur-sm pointer-events-none" />
 
-            {/* Glowing radial background */}
-            <div className="absolute inset-4 bg-gradient-to-tr from-blue-600/20 to-cyan-500/20 rounded-full blur-2xl scale-95" />
-
-            {/* Central Glowing Developer Core */}
-            <div className="relative w-40 h-40 md:w-52 md:h-52 rounded-full border border-white/10 bg-slate-950/80 backdrop-blur-2xl shadow-2xl flex flex-col items-center justify-center z-10 p-4 text-center">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500/10 via-cyan-500/5 to-indigo-500/10 pointer-events-none" />
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 flex items-center justify-center text-white mb-2 shadow-lg shadow-blue-500/20">
-                <span className="font-mono text-xl font-black">&lt;/&gt;</span>
+            {/* macOS Browser Mockup window */}
+            <div className="relative w-full rounded-2xl bg-slate-900 border border-slate-800 shadow-2xl overflow-hidden text-left font-sans text-slate-200 z-10 flex flex-col h-[380px]">
+              {/* Window Header Bar */}
+              <div className="flex items-center justify-between px-4 py-3 bg-slate-950/90 border-b border-slate-800/80 select-none shrink-0">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-[#EF4444] inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-[#F59E0B] inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-[#10B981] inline-block" />
+                </div>
+                {/* Simulated URL bar */}
+                <div className="bg-slate-900 border border-slate-800 text-[10px] text-slate-400 px-3 py-1 rounded-md w-48 text-center truncate font-mono tracking-tight flex items-center justify-center gap-1.5">
+                  <Globe size={10} className="text-cyan-400" />
+                  <span>usamajamali.com/theme-demo</span>
+                </div>
+                <div className="w-12" />
               </div>
-              <h3 className="text-white font-extrabold text-base md:text-lg tracking-tight">Usama Jamali</h3>
-              <p className="text-cyan-400 font-bold text-[10px] md:text-xs uppercase tracking-wider">Web Developer</p>
+
+              {/* Window Body - WooCommerce child theme live simulator */}
+              <div className="p-4 flex-1 overflow-hidden flex flex-col justify-between bg-slate-950/40 relative">
+                {/* Simulated Mini E-Commerce Header */}
+                <div className="flex items-center justify-between border-b border-slate-800/60 pb-2.5 shrink-0">
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-5 h-5 rounded bg-gradient-to-r from-blue-600 to-cyan-500 flex items-center justify-center">
+                      <ShoppingCart size={10} className="text-white" />
+                    </div>
+                    <span className="text-[11px] font-black uppercase tracking-wider text-white">UJ Commerce</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-[10px] text-slate-400 font-semibold uppercase tracking-widest">
+                    <span>Products</span>
+                    <div className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    <span className="text-cyan-400">Shop [2]</span>
+                  </div>
+                </div>
+
+                {/* Simulated Beautiful Active WooCommerce Card */}
+                <div className="my-auto bg-slate-900 border border-slate-800/80 rounded-xl p-3.5 shadow-md flex items-center gap-4">
+                  {/* Mock Product Image Area */}
+                  <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border border-slate-800 flex items-center justify-center text-cyan-400 shrink-0">
+                    <Laptop size={24} />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-1.5 mb-1">
+                      <span className="text-[8px] font-extrabold uppercase tracking-widest px-1.5 py-0.5 bg-cyan-500/10 text-cyan-400 rounded-md border border-cyan-500/20">Active Customizer</span>
+                    </div>
+                    <h4 className="text-[13px] font-bold text-white truncate leading-tight">WordPress Premium Theme</h4>
+                    <div className="flex items-center gap-1 text-[11px] text-yellow-400 mt-1">
+                      <Star size={11} fill="currentColor" />
+                      <Star size={11} fill="currentColor" />
+                      <Star size={11} fill="currentColor" />
+                      <Star size={11} fill="currentColor" />
+                      <Star size={11} fill="currentColor" />
+                      <span className="text-slate-400 text-[10px] font-semibold ml-1">(4.9 rating)</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Simulated Custom Metrics Overlay Panel */}
+                <div className="grid grid-cols-2 gap-2.5 shrink-0">
+                  {/* Metric 1 */}
+                  <div className="bg-slate-900/90 border border-slate-800/80 rounded-xl p-2.5 text-left flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-lg bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                      <span className="text-[10px] font-extrabold font-mono">99%</span>
+                    </div>
+                    <div>
+                      <p className="text-[8px] font-bold text-slate-500 uppercase tracking-widest leading-none mb-0.5">Lighthouse</p>
+                      <p className="text-[10px] font-bold text-slate-200">Speed Score</p>
+                    </div>
+                  </div>
+                  {/* Metric 2 */}
+                  <div className="bg-slate-900/90 border border-slate-800/80 rounded-xl p-2.5 text-left flex items-center gap-2">
+                    <div className="w-7 h-7 rounded-lg bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400">
+                      <Code size={12} />
+                    </div>
+                    <div>
+                      <p className="text-[8px] font-bold text-slate-500 uppercase tracking-widest leading-none mb-0.5">WordPress</p>
+                      <p className="text-[10px] font-bold text-slate-200">Responsive UI</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Orbiting Tech Skill Nodes */}
-            {/* Node 1: WordPress (Top-Left) */}
+            {/* Floating Experience Badge with Solid High Contrast styling */}
             <motion.div
-              animate={{ y: [0, -10, 0], x: [0, 5, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute top-0 left-4 sm:left-10 z-20 flex flex-col items-center gap-1"
-            >
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-slate-900/90 border border-white/10 hover:border-cyan-400 shadow-xl flex items-center justify-center text-cyan-400 backdrop-blur-md transition-all duration-300">
-                <span className="text-base font-black font-serif">W</span>
-              </div>
-              <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest bg-slate-950/80 px-2 py-0.5 rounded-md border border-white/5">WordPress</span>
-            </motion.div>
-
-            {/* Node 2: HTML5 & CSS3 (Top-Right) */}
-            <motion.div
-              animate={{ y: [0, 10, 0], x: [0, -5, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute top-4 right-4 sm:right-10 z-20 flex flex-col items-center gap-1"
-            >
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-slate-900/90 border border-white/10 hover:border-blue-400 shadow-xl flex items-center justify-center text-blue-400 backdrop-blur-md transition-all duration-300">
-                <span className="text-base font-mono font-bold">&lt;/&gt;</span>
-              </div>
-              <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest bg-slate-950/80 px-2 py-0.5 rounded-md border border-white/5">HTML/CSS</span>
-            </motion.div>
-
-            {/* Node 3: JavaScript (Bottom-Left) */}
-            <motion.div
-              animate={{ y: [0, 8, 0], x: [0, 6, 0] }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              className="absolute bottom-6 left-0 sm:left-6 z-20 flex flex-col items-center gap-1"
-            >
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-slate-900/90 border border-white/10 hover:border-indigo-400 shadow-xl flex items-center justify-center text-indigo-400 backdrop-blur-md transition-all duration-300 font-mono font-bold text-xs">
-                JS
-              </div>
-              <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest bg-slate-950/80 px-2 py-0.5 rounded-md border border-white/5">JavaScript</span>
-            </motion.div>
-
-            {/* Node 4: WooCommerce & Elementor (Bottom-Right) */}
-            <motion.div
-              animate={{ y: [0, -8, 0], x: [0, -6, 0] }}
-              transition={{ duration: 4.5, repeat: Infinity, ease: 'easeInOut', delay: 1.5 }}
-              className="absolute bottom-6 right-0 sm:right-6 z-20 flex flex-col items-center gap-1"
-            >
-              <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-slate-900/90 border border-white/10 hover:border-pink-400 shadow-xl flex items-center justify-center text-pink-400 backdrop-blur-md transition-all duration-300">
-                <span className="text-base font-black">🛒</span>
-              </div>
-              <span className="text-[9px] font-bold text-slate-400 uppercase tracking-widest bg-slate-950/80 px-2 py-0.5 rounded-md border border-white/5">WooCommerce</span>
-            </motion.div>
-
-             {/* Float badge widget */}
-            <motion.div
-              animate={{ y: [0, -8, 0] }}
+              animate={{ y: [0, -6, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -bottom-4 bg-slate-950/90 border border-white/10 px-4 py-2.5 rounded-2xl shadow-xl flex items-center gap-3 backdrop-blur-md z-20"
+              className="absolute -bottom-4 -right-2 bg-slate-900 border border-slate-800 px-4 py-2.5 rounded-xl shadow-2xl flex items-center gap-3 z-20"
             >
-              <div className="w-8 h-8 rounded-full bg-cyan-500/10 flex items-center justify-center text-cyan-400 text-sm font-bold">
+              <div className="w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-cyan-500 flex items-center justify-center text-white text-xs font-black">
                 1+
               </div>
               <div className="text-left">
-                <p className="text-[10px] font-bold uppercase tracking-wider text-slate-500 leading-none">Experience</p>
-                <p className="text-xs font-black text-white">Year of Dev Work</p>
+                <p className="text-[8px] font-bold uppercase tracking-widest text-slate-400 leading-none mb-0.5">Experience</p>
+                <p className="text-[11px] font-black text-white">Year of Development</p>
               </div>
             </motion.div>
           </motion.div>

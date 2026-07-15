@@ -35,7 +35,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-slate-950/40">
+    <section id="about" className="py-24 relative overflow-hidden bg-[#0B0F19]">
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         {/* Section Heading */}
         <div className="mb-20 text-center">
@@ -48,7 +48,7 @@ export default function About() {
             About Me
           </motion.h2>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full" />
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p className="mt-4 text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed font-medium">
             The narrative of an award-winning developer combining visual design with production-grade technology.
           </p>
         </div>
@@ -128,7 +128,7 @@ export default function About() {
               </div>
 
               {/* Float Experience Card */}
-              <div className="absolute -bottom-6 -right-6 bg-slate-900/40 backdrop-blur-xl border border-white/10 px-5 py-4 rounded-[20px] shadow-2xl z-20 flex flex-col gap-1 text-left">
+              <div className="absolute -bottom-6 -right-6 bg-slate-900 border border-slate-800 px-5 py-4 rounded-[20px] shadow-2xl z-20 flex flex-col gap-1 text-left">
                 <div className="flex items-center gap-1.5 text-cyan-400">
                   <Award size={16} />
                   <span className="text-xs font-bold uppercase tracking-widest">Quality Seal</span>
@@ -149,21 +149,21 @@ export default function About() {
               <h3 className="text-2xl md:text-3xl font-bold text-white mb-6 tracking-tight">
                 Crafting interfaces that convert visitors into customers.
               </h3>
-              <p className="text-base text-slate-400 leading-relaxed mb-8">
+              <p className="text-base text-slate-300 leading-relaxed mb-8 font-medium">
                 {longDescription}
               </p>
 
               {/* Small Stats Dashboard */}
               <div className="grid grid-cols-3 gap-4 mb-10">
                 {statCards.map((stat, idx) => (
-                  <div key={idx} className="bg-slate-900/40 backdrop-blur-xl border border-white/10 p-4 rounded-2xl text-center shadow-lg hover:border-cyan-500/30 transition-all duration-300">
+                  <div key={idx} className="bg-slate-900 border border-slate-800 p-4 rounded-2xl text-center shadow-lg hover:border-cyan-500/30 transition-all duration-300">
                     <p className="text-xl sm:text-2xl font-extrabold text-cyan-400">{stat.value}</p>
-                    <p className="text-[10px] sm:text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">{stat.label}</p>
+                    <p className="text-[10px] sm:text-xs text-slate-400 font-bold uppercase tracking-wider mt-1">{stat.label}</p>
                   </div>
                 ))}
               </div>
 
-              <h4 className="text-sm font-black text-slate-500 uppercase tracking-[0.2em] mb-6">
+              <h4 className="text-sm font-black text-slate-400 uppercase tracking-[0.2em] mb-6">
                 My Primary Areas of Expertise
               </h4>
 
@@ -172,14 +172,14 @@ export default function About() {
                 {coreFocusItems.map((focus, idx) => (
                   <div 
                     key={idx} 
-                    className="flex gap-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-all duration-300"
+                    className="flex gap-4 p-4 rounded-2xl bg-slate-900 border border-slate-800 hover:border-blue-500/30 transition-all duration-300 shadow-md"
                   >
-                    <div className="mt-0.5 p-2 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0 h-10 w-10">
+                    <div className="mt-0.5 p-2 rounded-lg bg-slate-950 border border-slate-800 flex items-center justify-center shrink-0 h-10 w-10">
                       {focus.icon}
                     </div>
                     <div>
-                      <h5 className="text-sm font-bold text-slate-200 mb-1">{focus.title}</h5>
-                      <p className="text-xs text-slate-400 leading-relaxed">{focus.description}</p>
+                      <h5 className="text-sm font-bold text-slate-100 mb-1">{focus.title}</h5>
+                      <p className="text-xs text-slate-300 leading-relaxed font-medium">{focus.description}</p>
                     </div>
                   </div>
                 ))}

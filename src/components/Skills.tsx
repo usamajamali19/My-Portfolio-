@@ -55,9 +55,9 @@ export default function Skills() {
   };
 
   return (
-    <section id="skills" className="py-24 relative overflow-hidden bg-[#0B1120]">
+    <section id="skills" className="py-24 relative overflow-hidden bg-[#0F172A]">
       {/* Visual Ambient Spot */}
-      <div className="absolute top-[30%] right-[-10%] w-[30rem] h-[30rem] bg-indigo-600/10 rounded-full blur-[140px] animate-pulse-glow" />
+      <div className="absolute top-[30%] right-[-10%] w-[30rem] h-[30rem] bg-indigo-600/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         {/* Section Title */}
@@ -71,7 +71,7 @@ export default function Skills() {
             Skills & Abilities
           </motion.h2>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full" />
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p className="mt-4 text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed font-medium">
             My technology suite for programming client-oriented solutions, from optimized browser structures to fully-featured digital shops.
           </p>
         </div>
@@ -89,11 +89,11 @@ export default function Skills() {
               key={skill.name}
               variants={cardVariants}
               whileHover={{ 
-                y: -8, 
+                y: -6, 
                 borderColor: 'rgba(6, 182, 212, 0.4)',
                 boxShadow: '0 12px 30px rgba(6, 182, 212, 0.15)'
               }}
-              className="group bg-slate-900/40 backdrop-blur-xl border border-white/10 hover:border-cyan-500/50 rounded-3xl p-6 transition-all duration-300 relative overflow-hidden flex flex-col justify-between shadow-xl"
+              className="group bg-slate-900 border border-slate-800 hover:border-cyan-500/50 rounded-3xl p-6 transition-all duration-300 relative overflow-hidden flex flex-col justify-between shadow-xl"
             >
               {/* Dynamic Inner Hover Gradient Highlight */}
               <div className="absolute -inset-px bg-gradient-to-r from-blue-600/0 via-cyan-500/0 to-indigo-600/0 group-hover:from-blue-600/5 group-hover:via-cyan-500/10 group-hover:to-indigo-600/5 transition-all duration-500 rounded-2xl" />
@@ -101,7 +101,7 @@ export default function Skills() {
               <div>
                 {/* Header Row: Icon + Name */}
                 <div className="flex items-center gap-4 mb-5 relative z-10">
-                  <div className="w-12 h-12 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center text-cyan-400 group-hover:text-white group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-500 transition-all duration-300 shadow-md">
+                  <div className="w-12 h-12 rounded-xl bg-slate-950 border border-slate-800/80 flex items-center justify-center text-cyan-400 group-hover:text-white group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-cyan-500 transition-all duration-300 shadow-md">
                     <DynamicLucideIcon name={skill.icon} className="w-5 h-5 transition-transform duration-300 group-hover:scale-110" />
                   </div>
                   <h3 className="text-base font-bold text-slate-100 tracking-tight group-hover:text-white transition-colors">
@@ -110,7 +110,7 @@ export default function Skills() {
                 </div>
 
                 {/* Level Percentage Indicator */}
-                <div className="relative z-10 flex items-center justify-between text-xs font-semibold uppercase tracking-widest text-slate-500 mb-2">
+                <div className="relative z-10 flex items-center justify-between text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">
                   <span>Proficiency</span>
                   <span className="text-cyan-400 group-hover:text-white transition-colors">{skill.level}%</span>
                 </div>

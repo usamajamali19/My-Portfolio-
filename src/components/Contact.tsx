@@ -104,11 +104,11 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-[#0B1120] px-6">
+    <section id="contact" className="py-24 relative overflow-hidden bg-[#0F172A] px-4 sm:px-6">
       {/* Background radial halo */}
       <div className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[45rem] h-[45rem] bg-indigo-600/5 rounded-full blur-[180px] pointer-events-none" />
 
-      <div className="container mx-auto px-6 max-w-7xl relative z-10">
+      <div className="container mx-auto max-w-7xl relative z-10">
         {/* Section Heading */}
         <div className="mb-20 text-center">
           <motion.h2
@@ -120,7 +120,7 @@ export default function Contact() {
             Get In Touch
           </motion.h2>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full" />
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p className="mt-4 text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed font-medium">
             Let's discuss how we can engineer an exceptional web experience for your company or enterprise.
           </p>
         </div>
@@ -130,29 +130,29 @@ export default function Contact() {
           <div className="lg:col-span-5 flex flex-col gap-6 justify-between text-left">
             <div className="space-y-6">
               <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">Contact Information</h3>
-              <p className="text-sm text-slate-400 leading-relaxed mb-6">
+              <p className="text-sm text-slate-300 leading-relaxed mb-6 font-medium">
                 Have a question or looking to build a new customized solution? Reach out directly, copy my contact number, or schedule a conversation via mail.
               </p>
 
               {contactTiles.map((tile) => (
                 <div
                   key={tile.label}
-                  className="p-5 rounded-2xl bg-white/5 border border-white/5 hover:border-cyan-500/30 flex items-center justify-between transition-all duration-300 group"
+                  className="p-5 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyan-500/30 flex items-center justify-between gap-4 transition-all duration-300 group shadow-lg"
                 >
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-slate-950 border border-slate-800/80 flex items-center justify-center shrink-0">
+                  <div className="flex items-center gap-4 min-w-0">
+                    <div className="w-12 h-12 rounded-xl bg-slate-950 border border-slate-800 flex items-center justify-center shrink-0">
                       {tile.icon}
                     </div>
-                    <div>
-                      <p className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-0.5">{tile.label}</p>
-                      <p className="text-sm sm:text-base font-bold text-slate-200">{tile.value}</p>
+                    <div className="min-w-0">
+                      <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-0.5">{tile.label}</p>
+                      <p className="text-sm sm:text-base font-bold text-white truncate">{tile.value}</p>
                     </div>
                   </div>
 
                   {/* Copy or Action button */}
                   <button
                     onClick={tile.action}
-                    className="p-2 rounded-lg bg-slate-950 border border-slate-850 hover:border-cyan-500/40 hover:text-cyan-400 transition-colors text-slate-500"
+                    className="p-2.5 rounded-lg bg-slate-950 border border-slate-800 hover:border-cyan-500/40 hover:text-cyan-400 transition-colors text-slate-400 shrink-0 cursor-pointer"
                     title={tile.actionLabel}
                   >
                     {tile.isCopy ? (
@@ -165,32 +165,36 @@ export default function Contact() {
               ))}
             </div>
 
-            {/* Quick Links Footer Grid */}
-            <div className="pt-6 border-t border-slate-900/80 flex items-center gap-4">
-              <span className="text-xs font-semibold tracking-widest text-slate-500 uppercase">External Portals</span>
-              <div className="h-px w-8 bg-slate-900" />
-              <a
-                href={linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-white/5 border border-white/5 hover:border-cyan-500 hover:text-cyan-400 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all"
-              >
-                <Linkedin size={14} /> LinkedIn
-              </a>
-              <a
-                href={github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-4 py-2 bg-white/5 border border-white/5 hover:border-cyan-500 hover:text-cyan-400 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all"
-              >
-                <Github size={14} /> GitHub
-              </a>
+            {/* Quick Links Footer Grid (Fixed Responsive Overflow) */}
+            <div className="pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-semibold tracking-widest text-slate-400 uppercase">External Portals</span>
+                <div className="h-px w-8 bg-slate-800" />
+              </div>
+              <div className="flex flex-wrap gap-2.5">
+                <a
+                  href={linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 bg-slate-900 border border-slate-800 hover:border-cyan-500 hover:text-cyan-400 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all shadow-md"
+                >
+                  <Linkedin size={14} /> LinkedIn
+                </a>
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 bg-slate-900 border border-slate-800 hover:border-cyan-500 hover:text-cyan-400 rounded-xl text-xs font-bold uppercase tracking-wider flex items-center gap-2 transition-all shadow-md"
+                >
+                  <Github size={14} /> GitHub
+                </a>
+              </div>
             </div>
           </div>
 
           {/* Contact Form Panel */}
           <div className="lg:col-span-7">
-            <div className="bg-slate-900/40 backdrop-blur-xl border border-white/10 p-8 md:p-10 rounded-[32px] relative overflow-hidden h-full flex flex-col justify-center shadow-2xl">
+            <div className="bg-slate-900 border border-slate-800 p-8 md:p-10 rounded-[32px] relative overflow-hidden h-full flex flex-col justify-center shadow-2xl">
               <AnimatePresence mode="wait">
                 {!isSuccess ? (
                   <motion.form

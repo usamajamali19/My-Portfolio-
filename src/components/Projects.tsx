@@ -14,9 +14,9 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden bg-[#0B1120]">
+    <section id="projects" className="py-24 relative overflow-hidden bg-[#0B0F19]">
       {/* Light Blur Background blobs */}
-      <div className="absolute bottom-[20%] left-[-10%] w-[35rem] h-[35rem] bg-cyan-600/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute bottom-[20%] left-[-10%] w-[35rem] h-[35rem] bg-cyan-600/5 rounded-full blur-[160px] pointer-events-none" />
 
       <div className="container mx-auto px-6 max-w-7xl relative z-10">
         {/* Section Heading */}
@@ -30,7 +30,7 @@ export default function Projects() {
             My Recent Projects
           </motion.h2>
           <div className="h-1 w-24 bg-gradient-to-r from-blue-600 to-cyan-500 mx-auto rounded-full" />
-          <p className="mt-4 text-slate-400 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed">
+          <p className="mt-4 text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed font-medium">
             A handpicked selection of commercial websites, feature-rich shops, and custom portfolio pieces engineered for success.
           </p>
         </div>
@@ -43,8 +43,8 @@ export default function Projects() {
               onClick={() => setSelectedCategory(cat)}
               className={`px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider transition-all duration-300 border ${
                 selectedCategory === cat
-                  ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white border-transparent shadow-lg shadow-blue-500/20'
-                  : 'bg-slate-900/50 text-slate-400 border-slate-800 hover:text-slate-100 hover:border-slate-700'
+                  ? 'bg-gradient-to-r from-blue-600 to-cyan-500 text-white border-transparent shadow-lg shadow-blue-500/20 cursor-pointer'
+                  : 'bg-slate-900 text-slate-300 border-slate-800 hover:text-white hover:border-slate-700 cursor-pointer shadow-md'
               }`}
             >
               {cat}
@@ -115,18 +115,18 @@ function ProjectCardKey({ project }: { project: Project; key?: string }) {
           transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`,
           transformStyle: 'preserve-3d',
         }}
-        className="group bg-slate-900/40 backdrop-blur-xl border border-white/10 hover:border-blue-500/30 rounded-[32px] overflow-hidden transition-all duration-300 shadow-2xl flex flex-col justify-between h-full"
+        className="group bg-slate-900 border border-slate-800 hover:border-blue-500/30 rounded-[32px] overflow-hidden transition-all duration-300 shadow-2xl flex flex-col justify-between h-full"
       >
         <div>
           {/* Card Image Banner Area */}
-          <div className="h-52 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-b border-slate-950 flex flex-col items-center justify-center relative overflow-hidden">
+          <div className="h-52 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 border-b border-slate-900 flex flex-col items-center justify-center relative overflow-hidden">
             {/* Visual ambient gradient grids */}
             <div className="absolute inset-0 bg-blue-600/5 group-hover:bg-cyan-500/0 transition-colors duration-500" />
-            <div className="absolute -top-16 -right-16 w-32 h-32 bg-cyan-400/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
+            <div className="absolute -top-16 -right-16 w-32 h-32 bg-cyan-400/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500" />
             
             {/* Category visual badge */}
             <div className="absolute top-4 left-4 z-20">
-              <span className="text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full bg-slate-950/80 border border-slate-800/80 text-cyan-400 flex items-center gap-1.5 shadow-md">
+              <span className="text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full bg-slate-950 border border-slate-800 text-cyan-400 flex items-center gap-1.5 shadow-md">
                 <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
                 {project.category}
               </span>
@@ -134,19 +134,19 @@ function ProjectCardKey({ project }: { project: Project; key?: string }) {
 
             {/* Simulated illustrative vector screen */}
             <div className="relative z-10 w-full max-w-[200px] flex flex-col items-center gap-2 group-hover:scale-105 transition-transform duration-500">
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600/10 to-cyan-500/20 border border-cyan-500/10 flex items-center justify-center text-cyan-400 group-hover:text-white group-hover:from-blue-600 group-hover:to-cyan-500 transition-all duration-300">
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600/10 to-cyan-500/20 border border-cyan-500/10 flex items-center justify-center text-cyan-400 group-hover:text-white group-hover:from-blue-600 group-hover:to-cyan-500 transition-all duration-300 shadow-md">
                 {project.category === 'WordPress' ? <Layers size={28} /> : <Code size={28} />}
               </div>
-              <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest leading-none mt-1">Usama's Work</p>
+              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest leading-none mt-1">Usama's Work</p>
             </div>
 
             {/* Full background hover glass mask reveal */}
-            <div className="absolute inset-0 bg-slate-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 backdrop-blur-sm z-15">
+            <div className="absolute inset-0 bg-slate-950/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-3 backdrop-blur-sm z-15">
               <a 
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 flex items-center justify-center shadow-lg transition-all hover:scale-110"
+                className="w-11 h-11 rounded-full bg-cyan-500 hover:bg-cyan-400 text-slate-950 flex items-center justify-center shadow-lg transition-all hover:scale-110 cursor-pointer"
               >
                 <Eye size={18} />
               </a>
@@ -154,7 +154,7 @@ function ProjectCardKey({ project }: { project: Project; key?: string }) {
                 href={project.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-11 h-11 rounded-full bg-slate-900 hover:bg-slate-800 text-white border border-slate-800 flex items-center justify-center shadow-lg transition-all hover:scale-110"
+                className="w-11 h-11 rounded-full bg-slate-900 hover:bg-slate-800 text-white border border-slate-800 flex items-center justify-center shadow-lg transition-all hover:scale-110 cursor-pointer"
               >
                 <Github size={18} />
               </a>
@@ -166,7 +166,7 @@ function ProjectCardKey({ project }: { project: Project; key?: string }) {
             <h3 className="text-xl font-bold text-white mb-2.5 group-hover:text-cyan-400 transition-colors">
               {project.title}
             </h3>
-            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6">
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-medium">
               {project.description}
             </p>
 
@@ -175,7 +175,7 @@ function ProjectCardKey({ project }: { project: Project; key?: string }) {
               {project.technologies.map((t) => (
                 <span
                   key={t}
-                  className="text-[9px] font-bold uppercase tracking-wider px-2.5 py-1 bg-white/5 border border-white/5 text-cyan-300 rounded-md hover:border-cyan-500/20 transition-all"
+                  className="text-[9px] font-bold uppercase tracking-wider px-2.5 py-1.5 bg-slate-950 border border-slate-800 text-cyan-400 rounded-md hover:border-cyan-500/20 transition-all shadow-sm"
                 >
                   {t}
                 </span>
